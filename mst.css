@@ -46,7 +46,7 @@ header{
 }
 nav a{
     font-size: 1.8rem;
-    color: white;
+    color: rgb(111, 19, 192);
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
@@ -232,10 +232,11 @@ border-radius: 50%;
 }
 /* Section Service */
 #service {
-    background-color: #f4a6a6;
-    color: #333;
-    padding: 5rem 9%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: rgb(155, 125, 125);
 }
 
 #service h2 {
@@ -261,10 +262,11 @@ border-radius: 50%;
 
 /* Section Skills */
 #skills {
-    background-color:rgb(245, 146, 146);
-    color: #333;
-    padding: 5rem 9%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: rgb(155, 125, 125);
 }
 
 #skills h2 {
@@ -290,10 +292,14 @@ border-radius: 50%;
 
 /* Section Education */
 #education {
-    background-color: rgb(251, 145, 159);
-    color: #333;
-    padding: 5rem 9%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: rgb(155, 125, 125);
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 #education h2 {
@@ -319,10 +325,14 @@ border-radius: 50%;
 
 /* Section Experience */
 #experience {
-    background-color:rgb(235, 120, 120);
-    color: #333;
-    padding: 5rem 9%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: rgb(155, 125, 125);
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 #experience h2 {
@@ -348,10 +358,15 @@ border-radius: 50%;
 
 /* Section Contact */
 #contact {
-    background-color: rgb(241, 144, 144);
-    color: #333;
-    padding: 5rem 9%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: rgb(155, 125, 125);
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    
 }
 
 #contact h2 {
@@ -396,6 +411,7 @@ border-radius: 50%;
     border: 1px solid #f49696;
     border-radius: 0.5rem;
     font-size: 1.6rem;
+    
 }
 
 #contact form button {
