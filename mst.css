@@ -1,163 +1,119 @@
+/* Importation de la police */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-*{
+/* Reset et styles de base */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     border: none;
     outline: none;
-    font-family: 'poppins'sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-html{
+
+html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
-body{
+
+body {
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
     background-color: wheat;
-    color: white;
+    color: #333;
 }
-header{
-    margin-top: 20px;
+
+/* Header */
+header {
     position: fixed;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
     width: 100%;
     padding: 1rem 9%;
-    background-color: transparent;
-    filter: drop-shadow(10px);
+    background-color: rgba(255, 255, 255, 0.9);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.logo{
+
+.logo {
     font-size: 3rem;
     color: rgb(72, 255, 0);
     font-weight: 800;
     cursor: pointer;
-    transition: 0.5s ease;
-
+    transition: transform 0.5s ease;
 }
-.logo:hover{
+
+.logo:hover {
     transform: scale(1.1);
 }
-nav a{
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
     font-size: 1.8rem;
     color: rgb(111, 19, 192);
-    margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
 }
+
 nav a:hover,
-nav a.active{
+nav a.active {
     color: red;
-    border-bottom: 3px solid rgb(255, 0, 0);
+    border-bottom: 3px solid red;
+}
 
-}
-/* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px */
-/**@media screen and (max-width: 1280px)
-/* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
-/*@media all and (min-width: 1024px) and (max-width: 1280px)
-/* Sur tous types d'écrans orientés verticalement */
-/*@media all and (orientation: portrait)*/
-/**@media(max-width:995px)*/
-@media all and (min-width: 1024px) and (max-width: 1280px){
-    nav {
-        position:absolute;
-        top: 100%;
-        right: 0%;
-        width: 40%;
-        border-left: 3px solid red;
-        border-bottom: 3px solid red;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
-        border-color: rgb(0, 0, 0);
-        border-top: 0.1rem solid rqba(0,0,0,0.1);
-    }
-    nav.active{
-        display: block;
-    }
-    nav.a{
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0; 
-    }
-    nav:hover,
-    nav a.active{
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid red;
-    }
-}
-section{
-    min-height: 10vh;
-    padding: 5rem 9% 5rem;
-}
-.home{
+/* Sections */
+section {
+    padding: 5rem 9%;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8rem;
-    background-color: rgb(155, 125, 125);
+    text-align: center;
 }
-.home .home-content h1{
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-span {
-    color: red;
-}
-.home-content h3{
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-.home-content p{
-    font-size: 1.6rem;
-}
-.home-img{
-border-radius: 50%;
-}
-.home-img img{
-    position: relative;
-    width: 32vw;
-    border-radius: 50%;
-    box-shadow: 0 0 25px sienna;
-    cursor: pointer;
-    transition: 0.2s linear;
-}
-.home-img img:hover{
-    font-size: 1.8rem;
-    font-weight: 500;
 
+section h2 {
+    font-size: 3.5rem;
+    color: red;
+    margin-bottom: 2rem;
 }
-.social-icons a{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background-color: transparent;
-    border: 0.2rem solid red;
-    font-size: 2rem;
-    border-radius: 50%;
-    margin: 3rem 1.5rem 3rem 0;
-    transition: 0.3s ease;
-    color:blue;
-    /* color:rgb(255, 255, 255); */
+
+section p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    color: #555;
 }
-.social-icons a:hover{
-    color: black;
-    transform: scale(1.3)translate();
-    background-color: red;
-    box-shadow: 0 0 25px red;
+
+section ul {
+    list-style: none;
+    padding: 0;
 }
-.btn{
+
+section ul li {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+}
+
+/* Images et vidéos */
+.home-img img,
+aside img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Boutons */
+.btn {
     display: inline-block;
     padding: 1rem 2.8rem;
     background-color: black;
@@ -170,272 +126,138 @@ border-radius: 50%;
     transition: 0.3s ease;
     cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
     transform: scale(1.03);
     background-color: red;
     color: black;
     box-shadow: 0 0 25px red;
 }
-.typing-text{
-    font-size: 34px;
-    font-weight: 600;
-    min-width: 280px;
+
+/* Social icons */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid red;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 1rem;
+    transition: 0.3s ease;
+    color: blue;
 }
-.typing-text span{
-    position: relative;
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3);
+    background-color: red;
+    box-shadow: 0 0 25px red;
 }
-.typing-text span::before{
-    content: "software Developper";
-    color: red;
-    animation: words 20s infinite;
-}
-.typing-text span::after{
-    content: "";
-    background-color: rgb(155, 125, 125);
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid rgb(190, 146, 146);
-    right: -8;
-    animation: cursor 0.6 infinite;
-}
-@keyframes cursor{
-    to{
-        border-left: 3px solid red;
+
+/* Media Queries */
+
+/* Petits écrans (max-width: 768px) */
+@media (max-width: 768px) {
+    html {
+        font-size: 55%;
     }
-}
-@keyframes words{
-    0%,20%{
-        content:"Ingenieur Logiciel";
-    }
-    21%,40%{
-        content: "Developpeur Web et Mobile";
-    }
-    41%,60%{
-        content: "Designeur Web";
-    }
-    61%,80%{
-        content: "Youtuber";
-    }
-    81%,100%{
-        content: "Script Writer";
-    }
-}
-@media(max-width:1000px) {
-    .home{
+
+    header {
         flex-direction: column;
-        margin: 5rem 4rem;
+        padding: 1rem;
     }
-    .home.home-content h3{
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    section {
+        padding: 3rem 5%;
+    }
+
+    .home-img img {
+        width: 80%;
+    }
+
+    .btn {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+    }
+
+    .social-icons a {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.6rem;
+    }
+}
+
+/* Moyens écrans (max-width: 1024px) */
+@media (max-width: 1024px) {
+    html {
+        font-size: 58%;
+    }
+
+    header {
+        padding: 1rem 5%;
+    }
+
+    nav a {
+        font-size: 1.6rem;
+    }
+
+    section h2 {
+        font-size: 3rem;
+    }
+
+    section p {
+        font-size: 1.6rem;
+    }
+
+    .btn {
+        font-size: 1.5rem;
+    }
+}
+
+/* Très petits écrans (max-width: 480px) */
+@media (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 1.4rem;
+    }
+
+    section h2 {
         font-size: 2.5rem;
     }
-    .home-content h1{
-        font-size: 5rem;
+
+    section p {
+        font-size: 1.4rem;
     }
-    .home-img img{
-        width: 70vw;
-        margin-top: 4rem;
+
+    .btn {
+        font-size: 1.4rem;
+        padding: 0.8rem 1.5rem;
     }
-}
-/* Section Service */
-#service {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    background-color: rgb(155, 125, 125);
-}
 
-#service h2 {
-    font-size: 3.5rem;
-    color: var(--primary-color, red);
-    margin-bottom: 2rem;
-}
-
-#service p {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
-}
-
-#service ul {
-    list-style: none;
-    padding: 0;
-}
-
-#service ul li {
-    font-size: 1.6rem;
-    margin: 1rem 0;
-}
-
-/* Section Skills */
-#skills {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    background-color: rgb(155, 125, 125);
-}
-
-#skills h2 {
-    font-size: 3.5rem;
-    color: var(--primary-color, red);
-    margin-bottom: 2rem;
-}
-
-#skills p {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
-}
-
-#skills ul {
-    list-style: none;
-    padding: 0;
-}
-
-#skills ul li {
-    font-size: 1.6rem;
-    margin: 1rem 0;
-}
-
-/* Section Education */
-#education {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    background-color: rgb(155, 125, 125);
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-#education h2 {
-    font-size: 3.5rem;
-    color: var(--primary-color, red);
-    margin-bottom: 2rem;
-}
-
-#education p {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
-}
-
-#education ul {
-    list-style: none;
-    padding: 0;
-}
-
-#education ul li {
-    font-size: 1.6rem;
-    margin: 1rem 0;
-}
-
-/* Section Experience */
-#experience {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    background-color: rgb(155, 125, 125);
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-#experience h2 {
-    font-size: 3.5rem;
-    color: var(--primary-color, red);
-    margin-bottom: 2rem;
-}
-
-#experience p {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
-}
-
-#experience ul {
-    list-style: none;
-    padding: 0;
-}
-
-#experience ul li {
-    font-size: 1.6rem;
-    margin: 1rem 0;
-}
-
-/* Section Contact */
-#contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    background-color: rgb(155, 125, 125);
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
-    
-}
-
-#contact h2 {
-    font-size: 3.5rem;
-    color: var(--primary-color, red);
-    margin-bottom: 2rem;
-}
-
-#contact p {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
-}
-
-#contact ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 3rem;
-}
-
-#contact ul li {
-    font-size: 1.6rem;
-    margin: 1rem 0;
-}
-
-#contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-#contact form label {
-    font-size: 1.6rem;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-#contact form input,
-#contact form textarea {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid #f49696;
-    border-radius: 0.5rem;
-    font-size: 1.6rem;
-    
-}
-
-#contact form button {
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background-color: var(--primary-color, rgb(227, 136, 136));
-    border-radius: 4rem;
-    font-size: 1.6rem;
-    color: #fff;
-    letter-spacing: 0.3rem;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-#contact form button:hover {
-    background-color: #333333;
-    color: #fff;
+    .social-icons a {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.4rem;
+    }
 }
