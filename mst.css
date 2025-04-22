@@ -56,43 +56,82 @@ nav a:hover,
 nav a.active{
     color: red;
     border-bottom: 3px solid rgb(255, 0, 0);
-
 }
-/* Navbar toujours aligné horizontalement */
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem; /* Espacement entre les liens */
-    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
-}
+/* Media Query pour les très petits écrans (max-width: 480px) */
+@media (max-width: 480px) {
+    html {
+        font-size: 50%; /* Réduit la taille de la police globale */
+    }
 
-nav a {
-    font-size: 1.6rem;
-    color: rgb(111, 19, 192);
-    font-weight: 500;
-    transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
-    padding: 0.5rem 1rem; /* Ajout de padding pour un meilleur espacement */
-}
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
 
-nav a:hover,
-nav a.active {
-    color: red;
-    border-bottom: 3px solid red;
-}
-
-/* Media Query pour petits écrans */
-@media (max-width: 768px) {
     nav {
-        justify-content: center; /* Centre les liens horizontalement */
-        flex-wrap: wrap; /* Permet de passer à la ligne si l'espace est insuffisant */
-        gap: 1rem; /* Réduit l'espacement entre les liens */
+        flex-wrap: nowrap; /* Empêche les liens de passer à la ligne */
+        overflow-x: auto; /* Ajoute un défilement horizontal si nécessaire */
+        justify-content: center;
+        gap: 1rem;
     }
 
     nav a {
-        font-size: 1.4rem; /* Réduit la taille de la police pour les petits écrans */
+        font-size: 1.4rem; /* Réduit la taille des liens */
         padding: 0.4rem 0.8rem; /* Ajuste le padding pour économiser de l'espace */
+        white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    }
+
+    .home {
+        flex-direction: column;
+        padding: 3rem 2rem;
+    }
+
+    .home-content h1 {
+        font-size: 4rem; /* Réduit la taille du titre */
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem; /* Réduit la taille du sous-titre */
+    }
+
+    .home-content p {
+        font-size: 1.4rem; /* Réduit la taille du texte */
+    }
+
+    .home-img img {
+        width: 90%; /* Réduit la taille de l'image */
+        margin-top: 2rem;
+    }
+
+    .btn {
+        font-size: 1.4rem; /* Réduit la taille des boutons */
+        padding: 0.8rem 1.5rem;
+    }
+
+    .social-icons a {
+        width: 2.5rem; /* Réduit la taille des icônes sociales */
+        height: 2.5rem;
+        font-size: 1.4rem;
+    }
+
+    section h2 {
+        font-size: 2.5rem; /* Réduit la taille des titres des sections */
+    }
+
+    section p {
+        font-size: 1.4rem; /* Réduit la taille des paragraphes */
+    }
+
+    #contact form input,
+    #contact form textarea {
+        font-size: 1.4rem; /* Réduit la taille des champs de formulaire */
+        padding: 0.8rem;
+    }
+
+    #contact form button {
+        font-size: 1.4rem; /* Réduit la taille du bouton */
+        padding: 0.8rem 1.5rem;
     }
 }
 @media (max-width: 768px) {
