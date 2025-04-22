@@ -9,6 +9,8 @@
 </head>
 <body>
     <header>
+        <div class="menu-icon">&#9776;</div> <!-- Hamburger icon -->
+
         <a href="#home" class="logo">Hissein</a>
         <nav>
             <a href="#home" class="active">Home</a>
@@ -113,4 +115,13 @@
         </form>
     </section>
 </body>
+<script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const nav = document.querySelector('nav');
+
+    menuIcon.addEventListener('click', () => {
+        nav.classList.toggle('show');
+    });
+</script>
+
 </html>

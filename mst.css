@@ -57,6 +57,16 @@ nav a.active{
     color: red;
     border-bottom: 3px solid rgb(255, 0, 0);
 }
+/* Navbar toujours visible sans défilement */
+nav {
+    display: flex;
+    justify-content: space-between; /* Répartit les liens sur toute la largeur */
+    align-items: center;
+    gap: 1rem; /* Réduit l'espacement entre les liens */
+    flex-wrap: nowrap; /* Empêche les liens de passer à la ligne */
+    overflow: hidden; /* Supprime tout débordement */
+    padding: 0 1rem; /* Ajoute un padding pour éviter que les liens touchent les bords */
+}
 /* Media Query pour les très petits écrans (max-width: 480px) */
 @media (max-width: 480px) {
     html {
@@ -235,6 +245,7 @@ nav a.active{
         font-size: 1.4rem;
     }
 }
+
 /* Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px */
 /**@media screen and (max-width: 1280px)
 /* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
@@ -616,4 +627,69 @@ border-radius: 50%;
 #contact form button:hover {
     background-color: #333333;
     color: #fff;
+}
+/* Correctif sur la police */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Ajout d'un bouton menu responsive */
+.menu-icon {
+    display: none;
+    font-size: 3rem;
+    color: red;
+    cursor: pointer;
+}
+
+/* Ajout du style pour l'animation typing-text */
+@keyframes words {
+    0%, 20% {
+        content: "Software Developer";
+    }
+    21%, 40% {
+        content: "Frontend Engineer";
+    }
+    41%, 60% {
+        content: "Backend Specialist";
+    }
+    61%, 80% {
+        content: "Full Stack Dev";
+    }
+    81%, 100% {
+        content: "UI/UX Designer";
+    }
+}
+
+/* Responsive menu hamburger visible sur petits écrans */
+@media (max-width: 995px) {
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 200;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: wheat;
+        position: absolute;
+        top: 6rem;
+        right: 2rem;
+        width: 60%;
+        padding: 2rem;
+        border: 2px solid red;
+        border-radius: 1rem;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        margin: 1rem 0;
+        font-size: 1.8rem;
+        color: red;
+    }
 }
