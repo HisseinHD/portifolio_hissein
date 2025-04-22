@@ -58,6 +58,43 @@ nav a.active{
     border-bottom: 3px solid rgb(255, 0, 0);
 
 }
+/* Navbar toujours aligné horizontalement */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Espacement entre les liens */
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+}
+
+nav a {
+    font-size: 1.6rem;
+    color: rgb(111, 19, 192);
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    padding: 0.5rem 1rem; /* Ajout de padding pour un meilleur espacement */
+}
+
+nav a:hover,
+nav a.active {
+    color: red;
+    border-bottom: 3px solid red;
+}
+
+/* Media Query pour petits écrans */
+@media (max-width: 768px) {
+    nav {
+        justify-content: center; /* Centre les liens horizontalement */
+        flex-wrap: wrap; /* Permet de passer à la ligne si l'espace est insuffisant */
+        gap: 1rem; /* Réduit l'espacement entre les liens */
+    }
+
+    nav a {
+        font-size: 1.4rem; /* Réduit la taille de la police pour les petits écrans */
+        padding: 0.4rem 0.8rem; /* Ajuste le padding pour économiser de l'espace */
+    }
+}
 @media (max-width: 768px) {
     html {
         font-size: 55%;
