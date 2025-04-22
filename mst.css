@@ -164,9 +164,10 @@ nav a.active{
 /* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px */
 /*@media all and (min-width: 1024px) and (max-width: 1280px)
 /* Sur tous types d'écrans orientés verticalement */
-/*@media all and (orientation: portrait)*/
-/**@media(max-width:995px)*/
-@media all and (min-width: 1024px) and (max-width: 1280px){
+/*@media all and (orientation: portrait)*
+/*@media all and (min-width: 1024px) and (max-width: 1280px)*/
+/***/
+@media(max-width:995px){
     nav {
         position:absolute;
         top: 100%;
