@@ -1,127 +1,1046 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Mon Portefolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mst.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Hissein Haroun | Visionnaire Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF4D4D;
+            --primary-dark: #CC0000;
+            --secondary: #00F5FF;
+            --accent: #FFD700;
+            --dark: #0A0A0A;
+            --light: #F5F5F5;
+            --gray: #7A7A8C;
+            --easing: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+
+        ::selection {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Typographie */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 5vw, 3rem);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s var(--easing);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        /* Layout */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        section {
+            padding: 6rem 0;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all 0.4s var(--easing);
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s var(--easing);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s var(--easing);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 77, 77, 0.6);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Profile 3D Card */
+        .profile-card {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%) rotateY(20deg);
+            width: 350px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.5s var(--easing);
+            z-index: 1;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-50%) rotateY(0deg) scale(1.05);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 70%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            filter: grayscale(20%) contrast(110%);
+            transition: transform 0.5s var(--easing);
+        }
+
+        .profile-card:hover .profile-image img {
+            transform: scale(1.1);
+        }
+
+        .profile-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .profile-info h3 {
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info p {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        .floating-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: 20%;
+            left: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--secondary);
+            bottom: 10%;
+            right: 15%;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        .floating-3 {
+            width: 150px;
+            height: 150px;
+            background: var(--accent);
+            top: 60%;
+            left: 30%;
+            animation: float 10s ease-in-out infinite 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .education-item {
+            position: relative;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-left: 2px solid var(--primary);
+            padding-left: 2rem;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid var(--dark);
+        }
+
+        .education-date {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .education-school {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s var(--easing);
+            transform-style: preserve-3d;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            background: rgba(255, 77, 77, 0.1);
+            border-color: var(--primary);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s var(--easing);
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 245, 255, 0.05), transparent);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s var(--easing);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 77, 77, 0.5);
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--easing);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .project-tag {
+            background: rgba(0, 245, 255, 0.1);
+            color: var(--secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s var(--easing);
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transform-style: preserve-3d;
+            transition: all 0.3s var(--easing);
+        }
+
+        .contact-form:hover {
+            transform: rotateY(5deg);
+            border-color: var(--secondary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            font-family: inherit;
+            transition: all 0.3s var(--easing);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: all 0.3s var(--easing);
+            transform-style: preserve-3d;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-5px) rotateY(20deg);
+        }
+
+        .copyright {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* 3D Animation */
+        @keyframes rotate3d {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        .rotate-3d {
+            animation: rotate3d 20s infinite linear;
+            transform-style: preserve-3d;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .profile-card {
+                right: 5%;
+                width: 300px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                margin: 3rem auto 0;
+                width: 350px;
+                height: 500px;
+            }
+
+            .profile-card:hover {
+                transform: none;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 4rem 0;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="menu-icon">&#9776;</div> <!-- Hamburger icon -->
-
-        <a href="#home" class="logo">Hissein</a>
-        <nav>
-            <a href="#home" class="active">Home</a>
-            <a href="#service">Service</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <span class="logo-icon"><i class="fas fa-code"></i></span>
+                    <span>Hissein Haroun</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#about">À Propos</a>
+                    <a href="#education">Éducation</a>
+                    <a href="#projects">Projets</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <!-- Section Home -->
-    <section id="home" class="home">
-        <div class="home-img">
-            <img src="img1.jpg" alt="Photo de Hissein Haroun">
-        </div>
-        <div class="home-content">
-            <h1>Salut, c'est <span>Hissein Haroun</span></h1>
-            <h3 class="typing-text">Je suis un <span></span></h3>
-            <p>Ingénieur logiciel avec 20 ans d'expérience.</p>
-            
-            <div class="social-icons">
-                <h4>Voici mes réseaux, visitez-moi pour en savoir plus sur moi :</h4>
-                <p>Je suis très passionné par la nouvelle technologie.</p>
-                <p>Et très motivé pour apprendre plus sur l'informatique.</p>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="https://discord.com/channels"><i class="fa-brands fa-discord"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h4>Innovateur Technologique</h4>
+                <h1>Hissein Haroun</h1>
+                <p class="hero-subtitle">Développeur Full-Stack & Designer 3D</p>
+                <p>Je crée des expériences digitales immersives qui fusionnent technologie de pointe et design innovant, avec une touche africaine unique.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">Voir mes réalisations</a>
+                    <a href="#contact" class="btn btn-outline">Collaborons ensemble</a>
+                </div>
             </div>
-            <a href="#" class="btn">Engager moi</a>
+
+            <!-- Profile 3D Card -->
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="img1.jpg" alt="Hissein Haroun">
+                </div>
+                <div class="profile-info">
+                    <h3>Hissein Haroun</h3>
+                    <p>Abéché, Tchad</p>
+                </div>
+            </div>
+
+            <!-- Floating Elements -->
+            <div class="floating-element floating-1"></div>
+            <div class="floating-element floating-2"></div>
+            <div class="floating-element floating-3"></div>
         </div>
     </section>
 
-    <!-- Section Service -->
-    <section id="service">
-        <h2>Mes Services</h2>
-        <p>Voici les services que je propose :</p>
-        <ul>
-            <li>Développement de logiciels sur mesure</li>
-            <li>Création de sites web et applications mobiles</li>
-            <li>Consultation en technologie</li>
-            <li>Formation en programmation</li>
-        </ul>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>À Propos de Moi</h2>
+            <div class="about-grid">
+                <div>
+                    <h3>Visionnaire Digital du Sahel</h3>
+                    <p>Originaire d'Abéché au Tchad, j'ai développé une passion précoce pour la technologie et l'innovation. Mon parcours atypique m'a permis de développer une approche unique du développement logiciel, combinant savoir-faire technique et sensibilité artistique.</p>
+                    <p>Je me spécialise dans la création d'interfaces utilisateur immersives et d'applications web performantes, avec une attention particulière pour les animations 3D et les expériences interactives.</p>
+                    
+                    <h3 style="margin-top: 2rem;">Compétences Clés</h3>
+                    <div class="skills-container">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-react"></i></div>
+                            <h4>React 3D</h4>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                            <h4>Three.js</h4>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                            <h4>Node.js</h4>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <h4>MongoDB</h4>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-vector-square"></i></div>
+                            <h4>Blender</h4>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <h4>UI/UX Design</h4>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Philosophie de Travail</h3>
+                    <p>Je crois en une approche holistique du développement logiciel où chaque pixel et chaque ligne de code contribuent à raconter une histoire. Mes créations ne se contentent pas de fonctionner - elles inspirent.</p>
+                    <p>Mon travail s'inspire des motifs sahéliens, des couleurs du désert tchadien et des formes organiques de la nature africaine, fusionnés avec une esthétique numérique futuriste.</p>
+                    
+                    <div style="margin-top: 3rem; background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <h3 style="color: var(--accent);">Disponibilité</h3>
+                        <p>Actuellement ouvert à des opportunités de travail freelance et à des collaborations innovantes. Particulièrement intéressé par les projets à impact social en Afrique.</p>
+                        <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Discutons de votre projet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Section Skills -->
-    <section id="skills">
-        <h2>Mes Compétences</h2>
-        <p>Voici un aperçu de mes compétences :</p>
-        <ul>
-            <li>Langages : JavaScript, Python, Java, C++</li>
-            <li>Frameworks : React, Angular, Django</li>
-            <li>Outils : Git, Docker, Kubernetes</li>
-            <li>Design : UX/UI, Figma, Adobe XD</li>
-        </ul>
-    </section>
-
-    <!-- Section Education -->
+    <!-- Education Section -->
     <section id="education">
-        <h2>Mon Parcours Éducatif</h2>
-        
-        <p>Voici mon parcours éducatif :</p>
-        <ul>
-            <li>Master en Informatique - Université virtuel du Tchad</li>
-            <li>Licence en Génie Logiciel - Institut National superieur de Sciences et Techniques d'Abeche</li>
-            <li>Certifications : typescript,<Nodej class="js">Node js</Nodej> ,Google Cloud, Microsoft Azure</li>
-        </ul>
+        <div class="container">
+            <h2>Parcours Académique</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-date">2021 - 2023</div>
+                    <h3 class="education-title">Master en Informatique Avancée</h3>
+                    <div class="education-school">Université de N'Djaména</div>
+                    <p>Spécialisation en systèmes distribués et réalité virtuelle. Mémoire sur "L'application des technologies 3D dans la préservation du patrimoine culturel tchadien".</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-date">2018 - 2021</div>
+                    <h3 class="education-title">Licence en Développement Web</h3>
+                    <div class="education-school">Institut Supérieur des Technologies, Abéché</div>
+                    <p>Formation intensive en développement full-stack avec un focus sur les architectures modernes et les interfaces utilisateur avancées.</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-date">2017</div>
+                    <h3 class="education-title">Certification en Design 3D</h3>
+                    <div class="education-school">École Africaine de Design Numérique</div>
+                    <p>Formation spécialisée en modélisation 3D et animation digitale, avec application aux besoins spécifiques du marché africain.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Section Experience -->
-    <section id="experience">
-        <h2>Mon Expérience</h2>
-        <p>Voici un aperçu de mon expérience professionnelle :</p>
-        <ul>
-            <li>Développeur Senior chez TechCorp (10 ans) </li>
-            <li>Chef de Projet chez Innovatech (5 ans)</li>
-            <li>Consultant Freelance en Développement (5 ans)</li>
-        </ul>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projets Récents</h2>
+            <p>Une sélection de mes réalisations les plus innovantes</p>
+            
+            <div class="projects-grid">
+                <!-- Projet 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sahel 3D">
+                    </div>
+                    <div class="project-content">
+                        <h3>Sahel 3D Explorer</h3>
+                        <p>Plateforme immersive permettant d'explorer les sites historiques du Sahel en réalité virtuelle, avec des reconstitutions 3D précises.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Three.js</span>
+                            <span class="project-tag">WebGL</span>
+                            <span class="project-tag">Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-outline">Détails</a>
+                            <a href="#" class="btn btn-primary">Voir en ligne</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="TchadConnect">
+                    </div>
+                    <div class="project-content">
+                        <h3>TchadConnect</h3>
+                        <p>Réseau social local avec interface 3D unique, permettant aux communautés tchadiennes de se connecter et partager des ressources.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">WebSockets</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-outline">Détails</a>
+                            <a href="#" class="btn btn-primary">Code Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="NomadUI">
+                    </div>
+                    <div class="project-content">
+                        <h3>NomadUI Framework</h3>
+                        <p>Bibliothèque de composants 3D pour applications web, inspirée des motifs traditionnels nomades et adaptée aux connexions limitées.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">CSS3D</span>
+                            <span class="project-tag">Open Source</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-outline">Détails</a>
+                            <a href="#" class="btn btn-primary">Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Section Contact -->
+    <!-- Contact Section -->
     <section id="contact">
-        <h2>Contactez-moi</h2>
-        <p>Vous pouvez me contacter via :</p>
-        <ul>
-            <li>Email : hisseindaoud6627@gmail.com</li>
-            <li>Téléphone : +235 66 27 68 05</li>
-            <li>Adresse : 123 Rue de l'Informatique, Abeche, Tchad</li>
-        </ul>
-        <form action="#" method="post">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            <button type="submit" class="btn">Envoyer</button>
-        </form>
+        <div class="container">
+            <h2>Travaillons Ensemble</h2>
+            <p>Disponible pour des projets ambitieux et des collaborations innovantes</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:hisseindaoud6627@gmail.com">hisseindaoud6627@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Téléphone</h3>
+                            <a href="tel:+23512345678">+235 12 34 56 78</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Localisation</h3>
+                            <p>Abéché, Tchad & Remote</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Disponibilité</h3>
+                            <p>Lundi - Vendredi: 9h - 17h (GMT+1)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Sujet">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Décrivez votre projet" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
-</body>
-<script>
-    const menuIcon = document.querySelector('.menu-icon');
-    const nav = document.querySelector('nav');
 
-    menuIcon.addEventListener('click', () => {
-        nav.classList.toggle('show');
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fas fa-code"></i></span>
+                <span>Hissein Haroun</span>
+            </a>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+            </div>
+            <p class="copyright">© 2023 Hissein Haroun. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+// 3D Card Rotation on Mouse Move
+const profileCard = document.querySelector('.profile-card');
+if (profileCard) {
+    profileCard.addEventListener('mousemove', (e) => {
+        const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+        const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+        profileCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
     });
-</script>
 
-</html>
+    profileCard.addEventListener('mouseenter', () => {
+        profileCard.style.transition = 'none';
+    });
+
+    profileCard.addEventListener('mouseleave', () => {
+        profileCard.style.transition = 'transform 0.5s ease';
+        profileCard.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+}
+        
