@@ -579,7 +579,108 @@
             min-height: 150px;
             resize: vertical;
         }
-
+        /* Section Formation */
+        .education {
+            padding: 80px 10%;
+            background-color:#0A0A0A;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color:#3e3939;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .timeline-date {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid white;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid white;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            top: 30px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+        
         /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.5);
@@ -805,34 +906,35 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2>Parcours Académique</h2>
-            <div class="education-timeline">
-                <div class="education-item">
-                    <div class="education-date">2021 - 2023</div>
-                    <h3 class="education-title">Master en Informatique Avancée</h3>
-                    <div class="education-school">Université de N'Djaména</div>
-                    <p>Spécialisation en systèmes distribués et réalité virtuelle. Mémoire sur "L'application des technologies 3D dans la préservation du patrimoine culturel tchadien".</p>
+        <section class="education">
+        <h2 class="section-title">Mon Parcours</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2023 - Présent</div>
+                    <h3>Développeur Full Stack Freelance</h3>
+                    <p>Création d'applications web et mobiles pour divers clients. Stack technique: React, Node.js, MongoDB.</p>
                 </div>
-                
-                <div class="education-item">
-                    <div class="education-date">2018 - 2021</div>
-                    <h3 class="education-title">Licence en Développement Web</h3>
-                    <div class="education-school">Institut Supérieur des Technologies, Abéché</div>
-                    <p>Formation intensive en développement full-stack avec un focus sur les architectures modernes et les interfaces utilisateur avancées.</p>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2022 - 2023</div>
+                    <h3>Formation Intensive - WenakLabs Simplon Africa</h3>
+                    <p>Formation en développement web full stack avec spécialisation en JavaScript. Acquisition de compétences en React, Node.js, bases de données et méthodologies agiles.</p>
                 </div>
-                
-                <div class="education-item">
-                    <div class="education-date">2017</div>
-                    <h3 class="education-title">Certification en Design 3D</h3>
-                    <div class="education-school">École Africaine de Design Numérique</div>
-                    <p>Formation spécialisée en modélisation 3D et animation digitale, avec application aux besoins spécifiques du marché africain.</p>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2020 - 2022</div>
+                    <h3>Licence en Informatique</h3>
+                    <p>Université [Nom de l'université]. Fondamentaux en algorithmique, structures de données et programmation orientée objet.</p>
                 </div>
+                <div class="timeline-dot"></div>
             </div>
         </div>
     </section>
-
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
@@ -1025,22 +1127,80 @@
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
-// 3D Card Rotation on Mouse Move
-const profileCard = document.querySelector('.profile-card');
-if (profileCard) {
-    profileCard.addEventListener('mousemove', (e) => {
-        const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-        const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-        profileCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-    });
 
-    profileCard.addEventListener('mouseenter', () => {
-        profileCard.style.transition = 'none';
-    });
+        // 3D Card Rotation on Mouse Move
+        const profileCard = document.querySelector('.profile-card');
+        if (profileCard) {
+            profileCard.addEventListener('mousemove', (e) => {
+                const rect = profileCard.getBoundingClientRect();
+                const x = e.clientX - rect.left; // position X relative à la carte
+                const y = e.clientY - rect.top;  // position Y relative à la carte
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const xAxis = (centerX - x) / 15; // ajustez le diviseur pour l'intensité
+                const yAxis = (y - centerY) / 15;
+                profileCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            });
 
-    profileCard.addEventListener('mouseleave', () => {
-        profileCard.style.transition = 'transform 0.5s ease';
-        profileCard.style.transform = 'rotateY(0deg) rotateX(0deg)';
-    });
-}
-        
+            profileCard.addEventListener('mouseenter', () => {
+                profileCard.style.transition = 'none';
+            });
+
+            profileCard.addEventListener('mouseleave', () => {
+                profileCard.style.transition = 'transform 0.5s ease';
+                profileCard.style.transform = 'rotateY(0deg) rotateX(0deg)';
+            });
+        }
+    
+        // Animation au scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation des éléments de la timeline
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            // Fonction pour vérifier si un élément est dans le viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.75
+                );
+            }
+            
+            // Fonction pour déclencher les animations
+            function animateOnScroll() {
+                timelineItems.forEach((item, index) => {
+                    if (isInViewport(item)) {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 200);
+                    }
+                });
+                
+                projectCards.forEach((card, index) => {
+                    if (isInViewport(card)) {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 100);
+                    }
+                });
+            }
+            
+            // Écouteur d'événement pour le scroll
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Animation initiale au chargement
+            animateOnScroll();
+            
+            // Animation des barres de compétences
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
