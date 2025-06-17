@@ -11,7 +11,7 @@ Bienvenue sur mon portfolio GitHub ! Je suis développeur web et logiciel avec u
 
 ## 🔧 Compétences techniques
 
-- **Langages** : JavaScript, TypeScript, Python, PHP, C, C++
+- **Langages** : JavaScript, TypeScript, Python, C, 
 - **Front-end** : React, HTML5, CSS3, Tailwind CSS, Bootstrap
 - **Back-end** : Node.js, Express, Django, Flask
 - **Base de données** : MySQL, MongoDB, SQLite, PostgreSQL
@@ -24,7 +24,7 @@ Bienvenue sur mon portfolio GitHub ! Je suis développeur web et logiciel avec u
 | **Moustagbal App** | Application desktop de gestion logistique : véhicules, carburant, stagiaires | Electron, Node.js, SQLite |
 | **Gestion Stock Santé** | Application de gestion de stock pour un laboratoire biomédical | React, Node.js, MongoDB |
 | **Authentification JWT** | Système complet d'authentification avec JWT, bcrypt et validation de token | Node.js, Express, MongoDB |
-| **INSTA Emploi du temps** | Application de planification pour filières de licence et master | HTML, CSS, JS, PHP, MySQL |
+| **INSTA Emploi du temps** | Application de planification pour filières de licence et master | HTML, CSS, JS, MySQL |
 | **Portfolio Web** | Site web personnel pour présenter mon profil et mes projets | HTML, CSS, JavaScript |
 
 ## 🚀 Objectifs
@@ -33,8 +33,8 @@ Mon objectif est de continuer à développer mes compétences techniques, contri
 
 ## 📫 Contact
 
-- 📧 Email : hisseinharoundaoud@gmail.com  
-- 🌐 Site web : [www.HisseiTechGuru.com](http://www.HisseiTechGuru.com)  
+- 📧 Email : hisseindaoud6627@gmail.com  
+- 🌐 Site web : [www.HisseiTechGuru.com]([http://www.HisseiTechGuru.com](https://hisseinhd.github.io/portifolio_hissein/)  
 - 📱 Téléphone : +235 66276805  
 - 🔗 LinkedIn : [linkedin.com/in/hisseinharoun](https://www.linkedin.com/in/hisseinharoun)
 
