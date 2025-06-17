@@ -34,7 +34,7 @@ Mon objectif est de continuer à développer mes compétences techniques, contri
 ## 📫 Contact
 
 - 📧 Email : hisseindaoud6627@gmail.com  
-- 🌐 Site web : [www.HisseiTechGuru.com]([http://www.HisseiTechGuru.com](https://hisseinhd.github.io/portifolio_hissein/)  
+- 🌐 Site web : https://hisseinhd.github.io/portifolio_hissein/
 - 📱 Téléphone : +235 66276805  
 - 🔗 LinkedIn : [linkedin.com/in/hisseinharoun](https://www.linkedin.com/in/hisseinharoun)
 
