@@ -36,7 +36,7 @@ Mon objectif est de continuer à développer mes compétences techniques, contri
 - 📧 Email : hisseindaoud6627@gmail.com  
 - 🌐 Site web : https://hisseinhd.github.io/portifolio_hissein/
 - 📱 Téléphone : +235 66276805  
-- 🔗 LinkedIn : [linkedin.com/in/hisseinharoun](https://www.linkedin.com/in/hisseinharoun)
+- 🔗 LinkedIn : [linkedin.com/in/daoud-hissein-36945a290(https://www.linkedin.com/in/daoud-hissein-36945a290)
 
 Merci de visiter mon portfolio ! N’hésitez pas à explorer les projets et à me contacter pour toute collaboration ou opportunité professionnelle.
 
